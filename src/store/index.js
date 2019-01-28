@@ -1,5 +1,12 @@
-import Count from './mudules/count';
+import {autorun} from 'mobx';
+import Count from './modules/count';
 
-export default{
-    count: new Count()
+let count = new Count();
+
+autorun(()=>{
+    console.log('count change...', count.count)
+})
+
+export default {
+    count
 }
